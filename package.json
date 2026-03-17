@@ -1,5 +1,5 @@
 {
-  "name": "@imaffe/openclaw-ios-screenshot-plugin",
+  "name": "@affeisme/openclaw-ios-screenshot-plugin",
   "version": "0.1.0",
   "description": "Authenticated iOS screenshot upload plugin for OpenClaw",
   "type": "module",

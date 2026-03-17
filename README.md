@@ -18,7 +18,7 @@ description, then stores each upload under the OpenClaw workspace.
 From npm:
 
 ```bash
-openclaw plugins install @imaffe/openclaw-ios-screenshot-plugin
+openclaw plugins install @affeisme/openclaw-ios-screenshot-plugin
 openclaw plugins enable openclaw-ios-screenshot-plugin
 ```
 
