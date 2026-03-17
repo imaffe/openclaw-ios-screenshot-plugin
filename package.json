@@ -1,9 +1,20 @@
 {
-  "name": "openclaw-ios-screenshot-plugin",
+  "name": "@imaffe/openclaw-ios-screenshot-plugin",
   "version": "0.1.0",
   "description": "Authenticated iOS screenshot upload plugin for OpenClaw",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imaffe/openclaw-ios-screenshot-plugin.git"
+  },
+  "homepage": "https://github.com/imaffe/openclaw-ios-screenshot-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/imaffe/openclaw-ios-screenshot-plugin/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "openclaw",
     "ios",

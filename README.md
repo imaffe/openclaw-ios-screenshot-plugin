@@ -15,7 +15,14 @@ description, then stores each upload under the OpenClaw workspace.
 
 ## Install
 
-From a local checkout:
+From npm:
+
+```bash
+openclaw plugins install @imaffe/openclaw-ios-screenshot-plugin
+openclaw plugins enable openclaw-ios-screenshot-plugin
+```
+
+From a local checkout during development:
 
 ```bash
 openclaw plugins install ./openclaw-ios-screenshot-plugin
@@ -45,6 +52,14 @@ plugins:
 ```
 
 Restart the OpenClaw gateway after config changes.
+
+## Publish
+
+```bash
+npm login
+npm pack --dry-run
+npm publish --access public
+```
 
 ## Usage
 
