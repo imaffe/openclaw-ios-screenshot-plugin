@@ -1,0 +1,68 @@
+{
+  "id": "einko-plugin",
+  "name": "Einko Screenshot Webhook",
+  "description": "Accept authenticated screenshot uploads over HTTP and store them in the OpenClaw workspace.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "authToken"
+    ],
+    "properties": {
+      "authToken": {
+        "type": "string",
+        "minLength": 16
+      },
+      "routePath": {
+        "type": "string",
+        "default": "/plugins/einko-plugin/upload"
+      },
+      "destinationDir": {
+        "type": "string",
+        "default": "screenshots/inbox"
+      },
+      "maxPayloadBytes": {
+        "type": "number",
+        "minimum": 1048576,
+        "maximum": 104857600,
+        "default": 26214400
+      },
+      "allowedMimeTypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "image/png",
+          "image/jpeg",
+          "image/webp",
+          "image/heic",
+          "image/heif"
+        ]
+      }
+    }
+  },
+  "uiHints": {
+    "authToken": {
+      "label": "Auth Token",
+      "help": "Bearer token or X-OpenClaw-Token value required for uploads.",
+      "sensitive": true
+    },
+    "routePath": {
+      "label": "Route Path",
+      "help": "HTTP path exposed by the OpenClaw gateway for screenshot uploads."
+    },
+    "destinationDir": {
+      "label": "Workspace Folder",
+      "help": "Relative directory inside ~/.openclaw/workspace where uploads are stored."
+    },
+    "maxPayloadBytes": {
+      "label": "Max Payload Bytes",
+      "help": "Maximum accepted request size for a single upload."
+    },
+    "allowedMimeTypes": {
+      "label": "Allowed MIME Types",
+      "help": "Image MIME types accepted by the upload endpoint."
+    }
+  }
+}

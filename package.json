@@ -1,0 +1,26 @@
+{
+  "name": "openclaw-ios-screenshot-plugin",
+  "version": "0.1.0",
+  "description": "Authenticated iOS screenshot upload plugin for OpenClaw",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "ios",
+    "plugin",
+    "screenshot",
+    "webhook",
+    "upload"
+  ],
+  "files": [
+    "index.ts",
+    "openclaw.plugin.json",
+    "README.md",
+    "src"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
