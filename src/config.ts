@@ -1,8 +1,8 @@
 import os from "node:os";
 import path from "node:path";
 
-export const EINKO_PLUGIN_ID = "einko-plugin";
-export const DEFAULT_ROUTE_PATH = "/plugins/einko-plugin/upload";
+export const OPENCLAW_IOS_SCREENSHOT_PLUGIN_ID = "openclaw-ios-screenshot-plugin";
+export const DEFAULT_ROUTE_PATH = "/plugins/openclaw-ios-screenshot-plugin/upload";
 export const DEFAULT_DESTINATION_DIR = "screenshots/inbox";
 export const DEFAULT_MAX_PAYLOAD_BYTES = 25 * 1024 * 1024;
 export const DEFAULT_ALLOWED_MIME_TYPES = [
@@ -13,7 +13,7 @@ export const DEFAULT_ALLOWED_MIME_TYPES = [
   "image/heif",
 ] as const;
 
-export const einkoPluginConfigSchema = {
+export const openClawIosScreenshotPluginConfigSchema = {
   type: "object",
   additionalProperties: false,
   required: ["authToken"],
@@ -46,7 +46,7 @@ export const einkoPluginConfigSchema = {
   },
 };
 
-export interface EinkoPluginConfig {
+export interface OpenClawIosScreenshotPluginConfig {
   authToken: string;
   routePath: string;
   destinationDir: string;
@@ -104,7 +104,7 @@ function normalizeAllowedMimeTypes(value: unknown): string[] {
   return next.length > 0 ? next : [...DEFAULT_ALLOWED_MIME_TYPES];
 }
 
-export function resolveEinkoPluginConfig(value: unknown): EinkoPluginConfig {
+export function resolveOpenClawIosScreenshotPluginConfig(value: unknown): OpenClawIosScreenshotPluginConfig {
   const record = asRecord(value);
 
   return {

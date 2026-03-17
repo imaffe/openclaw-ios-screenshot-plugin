@@ -1,19 +1,19 @@
 import { definePluginEntry, type OpenClawPluginApi } from "openclaw/plugin-sdk/core";
 import {
-  EINKO_PLUGIN_ID,
-  einkoPluginConfigSchema,
-  resolveEinkoPluginConfig,
+  OPENCLAW_IOS_SCREENSHOT_PLUGIN_ID,
+  openClawIosScreenshotPluginConfigSchema,
+  resolveOpenClawIosScreenshotPluginConfig,
   resolveWorkspaceRoot,
 } from "./config.js";
 import { createScreenshotUploadHandler } from "./http.js";
 
 const plugin = definePluginEntry({
-  id: EINKO_PLUGIN_ID,
-  name: "Einko Screenshot Webhook",
+  id: OPENCLAW_IOS_SCREENSHOT_PLUGIN_ID,
+  name: "OpenClaw iOS Screenshot Plugin",
   description: "Accept authenticated screenshot uploads and store them in the OpenClaw workspace.",
-  configSchema: einkoPluginConfigSchema,
+  configSchema: openClawIosScreenshotPluginConfigSchema,
   register(api: OpenClawPluginApi) {
-    const config = resolveEinkoPluginConfig(api.pluginConfig);
+    const config = resolveOpenClawIosScreenshotPluginConfig(api.pluginConfig);
     const workspaceRoot = resolveWorkspaceRoot(api.config);
 
     api.registerHttpRoute({
@@ -28,7 +28,7 @@ const plugin = definePluginEntry({
     });
 
     if (!config.authToken) {
-      api.logger.warn("einko-plugin is enabled without an authToken; upload requests will be rejected");
+      api.logger.warn("openclaw-ios-screenshot-plugin is enabled without an authToken; upload requests will be rejected");
     }
   },
 });

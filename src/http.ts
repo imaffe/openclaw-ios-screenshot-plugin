@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import crypto from "node:crypto";
-import type { EinkoPluginConfig } from "./config.js";
+import type { OpenClawIosScreenshotPluginConfig } from "./config.js";
 import { parseJsonRequest, parseMultipartRequest, readRequestBody, type ParsedUploadRequest } from "./multipart.js";
 import { storeUpload } from "./storage.js";
 
@@ -10,7 +10,7 @@ interface LoggerLike {
 }
 
 interface CreateScreenshotUploadHandlerParams {
-  config: EinkoPluginConfig;
+  config: OpenClawIosScreenshotPluginConfig;
   workspaceRoot: string;
   logger: LoggerLike;
 }

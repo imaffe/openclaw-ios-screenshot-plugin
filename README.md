@@ -19,7 +19,7 @@ From a local checkout:
 
 ```bash
 openclaw plugins install ./openclaw-ios-screenshot-plugin
-openclaw plugins enable einko-plugin
+openclaw plugins enable openclaw-ios-screenshot-plugin
 ```
 
 ## Configure
@@ -29,11 +29,11 @@ Add plugin config to your OpenClaw config file:
 ```yaml
 plugins:
   entries:
-    einko-plugin:
+    openclaw-ios-screenshot-plugin:
       enabled: true
       config:
         authToken: "replace-with-a-long-random-secret"
-        routePath: "/plugins/einko-plugin/upload"
+        routePath: "/plugins/openclaw-ios-screenshot-plugin/upload"
         destinationDir: "screenshots/inbox"
         maxPayloadBytes: 26214400
         allowedMimeTypes:
@@ -52,7 +52,7 @@ Restart the OpenClaw gateway after config changes.
 
 ```bash
 curl \
-  -X POST "http://localhost:3100/plugins/einko-plugin/upload" \
+  -X POST "http://localhost:3100/plugins/openclaw-ios-screenshot-plugin/upload" \
   -H "Authorization: Bearer replace-with-a-long-random-secret" \
   -F "description=Quarterly sales dashboard capture" \
   -F "file=@/path/to/screenshot.png;type=image/png"
@@ -62,7 +62,7 @@ curl \
 
 ```bash
 curl \
-  -X POST "http://localhost:3100/plugins/einko-plugin/upload" \
+  -X POST "http://localhost:3100/plugins/openclaw-ios-screenshot-plugin/upload" \
   -H "Content-Type: application/json" \
   -H "X-OpenClaw-Token: replace-with-a-long-random-secret" \
   -d '{

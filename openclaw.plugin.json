@@ -1,6 +1,6 @@
 {
-  "id": "einko-plugin",
-  "name": "Einko Screenshot Webhook",
+  "id": "openclaw-ios-screenshot-plugin",
+  "name": "OpenClaw iOS Screenshot Plugin",
   "description": "Accept authenticated screenshot uploads over HTTP and store them in the OpenClaw workspace.",
   "configSchema": {
     "type": "object",
@@ -15,7 +15,7 @@
       },
       "routePath": {
         "type": "string",
-        "default": "/plugins/einko-plugin/upload"
+        "default": "/plugins/openclaw-ios-screenshot-plugin/upload"
       },
       "destinationDir": {
         "type": "string",

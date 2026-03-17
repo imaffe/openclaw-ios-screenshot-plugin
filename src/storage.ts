@@ -1,11 +1,11 @@
 import crypto from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { EinkoPluginConfig } from "./config.js";
+import type { OpenClawIosScreenshotPluginConfig } from "./config.js";
 import type { UploadRequestFile } from "./multipart.js";
 
 export interface StoreUploadInput {
-  config: EinkoPluginConfig;
+  config: OpenClawIosScreenshotPluginConfig;
   workspaceRoot: string;
   description: string;
   files: UploadRequestFile[];
